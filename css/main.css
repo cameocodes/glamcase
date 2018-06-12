@@ -1,11 +1,37 @@
 
 
 body{
-    width: auto;
-    height: 400px;
-    background-color: azure;
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: black;
+    
 }
 
-h1{
-    color: chocolate;
+#main {
+    width: auto;
+    border: 2px solid transparent;
+    background-color: whitesmoke;
+    height: 1000px;
+    align-content: center;
+    color: black;
 }
+
+header{
+    color: white;
+    font-family: 'Helvetica';
+    text-align: center;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width:80%;
+    height: 100px;
+    
+}
+
+footer{
+    color: white;
+    text-align: center;
+
+}
+
