@@ -76,6 +76,9 @@ p{
     background-color: white;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 20px;
+    height: 400px;
+    border: 20px black;
 
   }
   
@@ -86,6 +89,7 @@ p{
     text-align: center;
     line-height: 40px;
     font-size: 10px;
+    border: 2px black;
   }
    
  
