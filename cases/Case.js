@@ -2,10 +2,10 @@ const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
 const caseSchema = new Schema({
-    size: String,
-    material: String,
-    color: String,
-    price: Number
+    coverSize: String,
+    coverMaterial: String,
+    coverColor: String,
+    coverPrice: Number
 })
 
 const caseModel = mongoose.model('Case', caseSchema)
