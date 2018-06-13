@@ -1,6 +1,11 @@
 
 
-const testUrl = 'http://localhost:3000/cases'
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+
+    const testUrl = 'http://localhost:3000/cases'
 
                                                                                         // FETCHING COVERS
 
@@ -22,8 +27,8 @@ function showCovers(res) {
         const coverDiv = document.createElement('div')
         const viewCover = document.createElement('button')
         viewCover.innerText = 'View Cover'
-        viewCover.id = cover.id
-        coverDiv.id = cover.id
+        viewCover.id = cover._id
+        coverDiv.id = cover._id
         coverDiv.setAttribute('class', 'cover')
         coverDiv.innerText = `Price: $${cover.coverPrice}, Size: ${cover.coverSize}, Color: ${cover.coverColor}, Material: ${cover.coverMaterial}`
         coverDiv.appendChild(viewCover)
@@ -31,8 +36,6 @@ function showCovers(res) {
     })
     
 }
-
-document.addEventListener('DOMContentLoaded', function () {
                                                                                         // SUBMIT COVER
 
     const form = document.querySelector('form')
@@ -71,14 +74,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                                                                                         // VIEW COVER
                                                                                         
-    const displayCases = document.getElementById('display-cases')   
-    console.log(displayCases)                                                                             
+    const displayCases = document.getElementById('display-cases')                                                                           
 
     displayCases.addEventListener("click", function(e) {
-        console.log(e.target.nodeName)
         if(e.target && e.target.nodeName == "BUTTON") {
             const coverID = e.target.id;
-            fetchCase(coverID)
+            console.log(coverID)
+            fetchCover(coverID)
                 .then(response => console.log(response))
                 .catch(err => console.log(err.message))
         }
@@ -91,19 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     
-    
-    
-    
-    // const viewCoverButton = document.body.getElementsByTagName('button')
-    // console.log(viewCoverButton)
-    // viewCoverButton.addEventListener("click", function(e) {
-    //     // e.target is the clicked element!
-    //     // If it was a list item
-    //     if(e.target && e.target.nodeName == "BUTTON") {
-    //         // List item found!  Output the ID!
-    //         console.log("List item ", e.target.id, " was clicked!");
-    //     }
-    // });
 
 });
 
