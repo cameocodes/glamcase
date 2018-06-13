@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "phoneSize": "plus",
+        "material":  "soft",
+        "color": "red",
+        "price": 20000
+    },
+    {
+        "id": 2,
+        "phoneSize": "normal",
+        "material":  "hard",
+        "color": "red",
+        "price": 10000
+    },
+    {
+        "id": 3,
+        "phoneSize": "plus",
+        "material":  "hard",
+        "color": "blue",
+        "price": 20000
+    }
+]
