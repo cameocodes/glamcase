@@ -30,7 +30,7 @@ function showCovers(res) {
         viewCover.id = cover._id
         coverDiv.id = cover._id
         coverDiv.setAttribute('class', 'cover')
-        coverDiv.innerHTML = `<p>$${cover.coverPrice}</p> <p>Size: ${cover.coverSize}</p> <p style="color: ${cover.coverColor}">Color: ${cover.coverColor}</p> <p>Material: ${cover.coverMaterial}</p>`
+        coverDiv.innerHTML = `<p>$${cover.coverPrice}</p> <p>Size: ${cover.coverSize}</p> <p style="color: ${cover.coverColor}">Color: ${cover.coverColor}</p> <p>Material: ${cover.coverMaterial} Plastic</p>`
         coverDiv.appendChild(viewCover)
         viewCovers.appendChild(coverDiv)
     })
@@ -57,17 +57,17 @@ function showCovers(res) {
         console.log(newCover)
         postCover(newCover)
             .then(res => console.log(res))
-            .then(cover => function(cover) {
-                const coverDiv = document.createElement('div')
-                const viewCover = document.createElement('button')
-                viewCover.innerText = 'View Case'
-                viewCover.id = cover._id
-                coverDiv.id = cover._id
-                coverDiv.setAttribute('class', 'cover')
-                coverDiv.innerHTML = `<p>$${cover.coverPrice}</p> <p>Size: ${cover.coverSize}</p> <p style="color: ${cover.coverColor}">Color: ${cover.coverColor}</p> <p>Material: ${cover.coverMaterial}</p>`
-                coverDiv.appendChild(viewCover)
-                displayCases.insertAdjacentElement('afterbegin', coverDiv)
-            })
+            // .then(cover => function(cover) {
+            //     const coverDiv = document.createElement('div')
+            //     const viewCover = document.createElement('button')
+            //     viewCover.innerText = 'View Case'
+            //     viewCover.id = cover._id
+            //     coverDiv.id = cover._id
+            //     coverDiv.setAttribute('class', 'cover')
+            //     coverDiv.innerHTML = `<p>$${cover.coverPrice}</p> <p>Size: ${cover.coverSize}</p> <p style="color: ${cover.coverColor}">Color: ${cover.coverColor}</p> <p>Material: ${cover.coverMaterial} Plastic</p>`
+            //     coverDiv.appendChild(viewCover)
+            //     displayCases.insertAdjacentElement('afterbegin', coverDiv)
+            // })
             .catch(err => console.log(err.message))
     }
 
