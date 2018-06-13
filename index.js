@@ -26,18 +26,18 @@ function showCovers(res) {
         console.log(cover)
         const coverDiv = document.createElement('div')
         const viewCover = document.createElement('button')
-        viewCover.innerText = 'View Cover'
+        viewCover.innerText = 'View Case'
         viewCover.id = cover._id
         coverDiv.id = cover._id
         coverDiv.setAttribute('class', 'cover')
-        coverDiv.innerText = `Price: $${cover.coverPrice}, Size: ${cover.coverSize}, Color: ${cover.coverColor}, Material: ${cover.coverMaterial}`
+        coverDiv.innerHTML = `<p>$${cover.coverPrice}</p> <p>Size: ${cover.coverSize}</p> <p style="color: ${cover.coverColor}">Color: ${cover.coverColor}</p> <p>Material: ${cover.coverMaterial}</p>`
         coverDiv.appendChild(viewCover)
         viewCovers.appendChild(coverDiv)
     })
     
 }
                                                                                         // SUBMIT COVER
-
+    const displayCases = document.getElementById('display-cases') 
     const form = document.querySelector('form')
     const button = document.getElementById('postButton')
     button.addEventListener('click', submitCover)
@@ -49,10 +49,25 @@ function showCovers(res) {
             coverMaterial: form.coverMaterial.value,
             coverColor: form.coverColor.value,
         }
+        if(form.coverSize.value == "Plus"){
+            newCover.coverPrice = 20000;
+        } else {
+            newCover.coverPrice = 15000;
+        }
         console.log(newCover)
         postCover(newCover)
             .then(res => console.log(res))
-            // .then(addToBookList)
+            .then(cover => function(cover) {
+                const coverDiv = document.createElement('div')
+                const viewCover = document.createElement('button')
+                viewCover.innerText = 'View Case'
+                viewCover.id = cover._id
+                coverDiv.id = cover._id
+                coverDiv.setAttribute('class', 'cover')
+                coverDiv.innerHTML = `<p>$${cover.coverPrice}</p> <p>Size: ${cover.coverSize}</p> <p style="color: ${cover.coverColor}">Color: ${cover.coverColor}</p> <p>Material: ${cover.coverMaterial}</p>`
+                coverDiv.appendChild(viewCover)
+                displayCases.insertAdjacentElement('afterbegin', coverDiv)
+            })
             .catch(err => console.log(err.message))
     }
 
@@ -74,7 +89,7 @@ function showCovers(res) {
 
                                                                                         // VIEW COVER
                                                                                         
-    const displayCases = document.getElementById('display-cases')                                                                           
+                                                                              
 
     displayCases.addEventListener("click", function(e) {
         if(e.target && e.target.nodeName == "BUTTON") {

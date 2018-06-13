@@ -58,7 +58,8 @@ h2{
 }
 
 #designs{
-    width:600px;
+    padding-top: 10%;
+    width:80%;
     margin-left: auto;
     margin-right:auto;
 }
@@ -84,9 +85,11 @@ p{
    
 
   }
-  
 
-   
+form {
+    text-align: center;
+    padding: 20px;
+}
  
 
   footer{
