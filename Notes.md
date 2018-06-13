@@ -1,0 +1,1 @@
+Encountered variable error when trying to use the word "case" as in phone case. As soon as the variable name was changed the errors disappeared.

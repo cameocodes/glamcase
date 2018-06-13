@@ -1,0 +1,9 @@
+POST http://localhost:3000/cases 
+Content-Type: application/json
+
+{
+    "size" : "normal",
+    "material": "soft",
+    "color": "green",
+    "price": 20000  
+}
